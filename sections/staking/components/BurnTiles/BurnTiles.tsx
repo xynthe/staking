@@ -24,9 +24,9 @@ type BurnTilesProps = {
 	burnAmountToFixCRatio: BigNumber;
 };
 
-const burnIcon = <Svg src={BurnCircle} />;
-const burnCustomIcon = <Img src={BurnCustomCircle} />; // TODO: investigate why it doesn't render correctly with <Svg /> (ids were replaced to be unique)
-const burnTargetIcon = <Svg src={BurnTargetCircle} />;
+const BurnIcon = () => <Svg src={BurnCircle} />;
+const BurnCustomIcon = () => <Img src={BurnCustomCircle} />; // TODO: investigate why it doesn't render correctly with <Svg /> (ids were replaced to be unique)
+const BurnTargetIcon = () => <Svg src={BurnTargetCircle} />;
 
 const BurnTiles: React.FC<BurnTilesProps> = ({ percentageTargetCRatio, burnAmountToFixCRatio }) => {
 	const { t } = useTranslation();
@@ -45,7 +45,7 @@ const BurnTiles: React.FC<BurnTilesProps> = ({ percentageTargetCRatio, burnAmoun
 					left={true}
 					title={t('staking.actions.burn.tiles.max.title')}
 					subtext={t('staking.actions.burn.tiles.max.subtext')}
-					icon={burnIcon}
+					icon={<BurnIcon />}
 					onAction={() => onBurnTypeChange(BurnActionType.MAX)}
 				/>
 				<MarginedButtonTile
@@ -55,7 +55,7 @@ const BurnTiles: React.FC<BurnTilesProps> = ({ percentageTargetCRatio, burnAmoun
 						targetCRatio: formatPercent(percentageTargetCRatio),
 					})}
 					subtext={t('staking.actions.burn.tiles.target.subtext')}
-					icon={burnTargetIcon}
+					icon={<BurnTargetIcon />}
 					onAction={() => onBurnTypeChange(BurnActionType.TARGET)}
 				/>
 			</StyledRow>
@@ -64,7 +64,7 @@ const BurnTiles: React.FC<BurnTilesProps> = ({ percentageTargetCRatio, burnAmoun
 					left={true}
 					title={t('staking.actions.burn.tiles.custom.title')}
 					subtext={t('staking.actions.burn.tiles.custom.subtext')}
-					icon={burnCustomIcon}
+					icon={<BurnCustomIcon />}
 					onAction={() => onBurnTypeChange(BurnActionType.CUSTOM)}
 				/>
 				<MarginedButtonTile
@@ -75,7 +75,7 @@ const BurnTiles: React.FC<BurnTilesProps> = ({ percentageTargetCRatio, burnAmoun
 							? t('common.layer-2.not-available')
 							: t('staking.actions.burn.tiles.clear-debt.subtext')
 					}
-					icon={burnIcon}
+					icon={<BurnIcon />}
 					onAction={() => onBurnTypeChange(BurnActionType.CLEAR)}
 					disabled={isL2}
 				/>

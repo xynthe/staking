@@ -12,21 +12,21 @@ import { EXTERNAL_LINKS } from 'constants/links';
 
 import { media } from 'styles/media';
 
-const SOCIAL_LINKS = [
+const SOCIAL_LINKS = () => [
 	{
 		id: 'discord',
 		href: EXTERNAL_LINKS.Social.Discord,
-		icon: <Svg src={DiscordIcon} />,
+		icon: () => <Svg src={DiscordIcon} />,
 	},
 	{
 		id: 'twitter',
 		href: EXTERNAL_LINKS.Social.Twitter,
-		icon: <Svg src={TwitterIcon} />,
+		icon: () => <Svg src={TwitterIcon} />,
 	},
 	{
 		id: 'github',
 		href: EXTERNAL_LINKS.Social.GitHub,
-		icon: <Svg src={GithubIcon} />,
+		icon: () => <Svg src={GithubIcon} />,
 	},
 ];
 
@@ -36,9 +36,9 @@ type SocialLinksProps = {
 
 const SocialLinks: FC<SocialLinksProps> = (props) => (
 	<Links {...props}>
-		{SOCIAL_LINKS.map(({ id, href, icon }) => (
+		{SOCIAL_LINKS().map(({ id, href, icon: Icon }) => (
 			<StyledExternalLink key={id} href={href}>
-				{icon}
+				<Icon />
 			</StyledExternalLink>
 		))}
 	</Links>

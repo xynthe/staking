@@ -16,7 +16,7 @@ type NotificationProps = {
 	isExternal?: boolean;
 };
 
-const arrowIcon = <Svg src={ArrowRightLongIcon} />;
+const ArrowIcon = () => <Svg src={ArrowRightLongIcon} />;
 
 const Notification: FC<NotificationProps> = ({ type, children, link, isExternal }) => {
 	const hasLink = link != null;
@@ -25,7 +25,11 @@ const Notification: FC<NotificationProps> = ({ type, children, link, isExternal 
 		<Container>
 			<Indicator type={type} />
 			<Content>{children}</Content>
-			{link && <LinkContainer>{arrowIcon}</LinkContainer>}
+			{link && (
+				<LinkContainer>
+					<ArrowIcon />
+				</LinkContainer>
+			)}
 		</Container>
 	);
 

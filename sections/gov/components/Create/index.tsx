@@ -19,7 +19,7 @@ import TxConfirmationModal from 'sections/shared/modals/TxConfirmationModal';
 import { ModalContent, ModalItem, ModalItemText, ModalItemTitle } from 'styles/common';
 
 import synthetix from 'lib/synthetix';
-import CouncilDilution from 'contracts/councilDilution.js';
+import CouncilDilution from 'contracts/councilDilution';
 import TransactionNotifier from 'containers/TransactionNotifier';
 import { truncateAddress } from 'utils/formatters/string';
 import { useTranslation } from 'react-i18next';

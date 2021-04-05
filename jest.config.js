@@ -7,11 +7,11 @@ module.exports = {
 	globals: {
 		'ts-jest': {
 			useBabelrc: true,
-			tsConfigFile: 'jest.tsconfig.json',
+			tsConfigFile: 'tsconfig.json',
 		},
 	},
-	coveragePathIgnorePatterns: ['/node_modules/', 'enzyme.js'],
-	setupTestFrameworkScriptFile: '<rootDir>/enzyme.js',
+	coveragePathIgnorePatterns: ['/node_modules/', 'enzyme.config.js'],
+	setupTestFrameworkScriptFile: '<rootDir>/enzyme.config.js',
 	coverageReporters: ['json', 'lcov', 'text', 'text-summary'],
 	moduleNameMapper: {
 		'\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':

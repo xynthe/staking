@@ -12,7 +12,7 @@ import { appReadyState } from 'store/app';
 import { walletAddressState } from 'store/wallet';
 import Connector from 'containers/Connector';
 import snapshot from '@snapshot-labs/snapshot.js';
-import CouncilDilution from 'contracts/councilDilution.js';
+import CouncilDilution from 'contracts/councilDilution';
 import { ethers } from 'ethers';
 import { uniqBy } from 'lodash';
 import { IpfsProposal, SpaceData, Votes, Vote, SpaceStrategy } from './types';

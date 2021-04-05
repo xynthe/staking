@@ -44,7 +44,7 @@ import { useRecoilValue } from 'recoil';
 import { proposalState } from 'store/gov';
 import Button from 'components/Button';
 
-import CouncilDilution from 'contracts/councilDilution.js';
+import CouncilDilution from 'contracts/councilDilution';
 import { ethers } from 'ethers';
 import Connector from 'containers/Connector';
 import { appReadyState } from 'store/app';

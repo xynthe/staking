@@ -84,10 +84,10 @@ const getWalletIcon = (selectedWallet?: string | null) => {
 	}
 };
 
-const exitIcon = <Svg src={ExitIcon} />;
-const walletIcon = <Svg src={WalletIcon} />;
-const changeIcon = <Svg src={ArrowsChangeIcon} />;
-const searchIcon = <Svg src={SearchIcon} />;
+const ExitSvgIcon = () => <Svg src={ExitIcon} />;
+const WalletSvgIcon = () => <Svg src={WalletIcon} />;
+const ChangeSvgIcon = () => <Svg src={ArrowsChangeIcon} />;
+const SearchSvgIcon = () => <Svg src={SearchIcon} />;
 
 const WalletOptionsModal: FC<WalletOptionsProps> = ({ onDismiss, setWatchWalletModalOpened }) => {
 	const { t } = useTranslation();
@@ -176,7 +176,7 @@ const WalletOptionsModal: FC<WalletOptionsProps> = ({ onDismiss, setWatchWalletM
 								connectWallet();
 							}}
 						>
-							{walletIcon} {t('modals.wallet.change-wallet')}
+							{<WalletSvgIcon />} {t('modals.wallet.change-wallet')}
 						</StyledButton>
 						{isHardwareWallet() && (
 							<StyledButton
@@ -185,7 +185,7 @@ const WalletOptionsModal: FC<WalletOptionsProps> = ({ onDismiss, setWatchWalletM
 									switchAccounts();
 								}}
 							>
-								{changeIcon} {t('modals.wallet.switch-account')}
+								{<ChangeSvgIcon />} {t('modals.wallet.switch-account')}
 							</StyledButton>
 						)}
 						<StyledButton
@@ -194,7 +194,7 @@ const WalletOptionsModal: FC<WalletOptionsProps> = ({ onDismiss, setWatchWalletM
 								setWatchWalletModalOpened(true);
 							}}
 						>
-							{searchIcon} {t('modals.wallet.watch-wallet.title')}
+							{<SearchSvgIcon />} {t('modals.wallet.watch-wallet.title')}
 						</StyledButton>
 					</Buttons>
 					<StyledDivider />
@@ -206,7 +206,7 @@ const WalletOptionsModal: FC<WalletOptionsProps> = ({ onDismiss, setWatchWalletM
 								setWalletAddress(null);
 							}}
 						>
-							{exitIcon} {t('modals.wallet.stop-watching')}
+							{<ExitSvgIcon />} {t('modals.wallet.stop-watching')}
 						</StyledTextButton>
 					) : (
 						<StyledTextButton
@@ -215,7 +215,7 @@ const WalletOptionsModal: FC<WalletOptionsProps> = ({ onDismiss, setWatchWalletM
 								disconnectWallet();
 							}}
 						>
-							{exitIcon} {t('modals.wallet.disconnect-wallet')}
+							{<ExitSvgIcon />} {t('modals.wallet.disconnect-wallet')}
 						</StyledTextButton>
 					)}
 				</>
@@ -233,7 +233,7 @@ const WalletOptionsModal: FC<WalletOptionsProps> = ({ onDismiss, setWatchWalletM
 							}}
 							data-testid="watch-wallet"
 						>
-							{searchIcon} {t('modals.wallet.watch-wallet.title')}
+							{<SearchSvgIcon />} {t('modals.wallet.watch-wallet.title')}
 						</StyledButton>
 					</Buttons>
 				</WalletDetails>

@@ -12,7 +12,7 @@ import { networkState, walletAddressState } from 'store/wallet';
 import snapshot from '@snapshot-labs/snapshot.js';
 import Connector from 'containers/Connector';
 import { ethers } from 'ethers';
-import CouncilDilution from 'contracts/councilDilution.js';
+import CouncilDilution from 'contracts/councilDilution';
 
 const useProposals = (spaceKey: SPACE_KEY, options?: QueryConfig<Proposal[]>) => {
 	const isAppReady = useRecoilValue(appReadyState);

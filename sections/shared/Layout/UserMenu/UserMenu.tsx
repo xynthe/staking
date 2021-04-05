@@ -21,8 +21,10 @@ import CaretUp from 'assets/svg/app/caret-up.svg';
 import CaretDown from 'assets/svg/app/caret-down.svg';
 import WatchWalletModal from 'sections/shared/modals/WatchWalletModal';
 
-const caretUp = <Svg src={CaretUp} viewBox={`0 0 ${CaretUp.width} ${CaretUp.height}`} />;
-const caretDown = <Svg src={CaretDown} viewBox={`0 0 ${CaretDown.width} ${CaretDown.height}`} />;
+const CaretUpSvg = () => <Svg src={CaretUp} viewBox={`0 0 ${CaretUp.width} ${CaretUp.height}`} />;
+const CaretDownSvg = () => (
+	<Svg src={CaretDown} viewBox={`0 0 ${CaretDown.width} ${CaretDown.height}`} />
+);
 
 const UserMenu: FC = () => {
 	const { t } = useTranslation();
@@ -88,7 +90,7 @@ const UserMenu: FC = () => {
 								<NetworkTag className="network-tag" data-testid="network-tag">
 									{getNetworkName()}
 								</NetworkTag>
-								{walletOptionsModalOpened ? caretUp : caretDown}
+								{walletOptionsModalOpened ? <CaretUpSvg /> : <CaretDownSvg />}
 							</WalletButton>
 						) : (
 							<WalletButton
@@ -100,7 +102,7 @@ const UserMenu: FC = () => {
 									<StyledConnectionDot />
 									<UpperCased>{t('common.wallet.not-connected')}</UpperCased>
 								</FlexDivCentered>
-								{walletOptionsModalOpened ? caretUp : caretDown}
+								{walletOptionsModalOpened ? <CaretUpSvg /> : <CaretDownSvg />}
 							</WalletButton>
 						)}
 						{walletOptionsModalOpened && (
