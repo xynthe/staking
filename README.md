@@ -13,7 +13,7 @@
 - Styled-Components
 - Immer
 
-## Ethereum stack
+## Vapory stack
 
 - ethers.js v5 - Ethereum wallet implementation.
 - Blocknative Onboard - for ethereum wallet connectivity.
