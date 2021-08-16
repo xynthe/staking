@@ -21,13 +21,13 @@ jobs:
         uses: actions/checkout@ee5a9d1395988d7c82c67c69571871f5994b94df # pin@v2
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v1
+        uses: github/codeql-action/init@b0e70410b40f1a9af3bba1cecd95b4b57896af26
         with:
           queries: security-and-quality
           languages: javascript
 
       - name: Autobuild
-        uses: github/codeql-action/autobuild@v1
+        uses: github/codeql-action/autobuild@b0e70410b40f1a9af3bba1cecd95b4b57896af26
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v1
+        uses: github/codeql-action/analyze@b0e70410b40f1a9af3bba1cecd95b4b57896af26
